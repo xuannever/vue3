@@ -8,6 +8,7 @@ import plugins from './plugins'
 import pinia from '@/store/index'
 // import dataV from '@jiaminghi/data-view'
 import 'element-plus/dist/index.css'
+import scroll from 'vue-seamless-scroll/src'
 // import './permission'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 const app = createApp(App)
@@ -16,6 +17,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   }
   
 app.use(router)
+app.use(scroll)
 app.use(pinia)
 app.use(plugins)
 // Vue.use(dataV)

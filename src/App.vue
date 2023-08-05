@@ -1,66 +1,8 @@
 <template>
   <div class="common-layout" style="font-size=20px ">
     <el-container>
-      <el-aside :width="isCollapse ? '64px':'200px'">
-	  <!-- <div>vmware-demo</div> -->
-	  <el-menu
-		default-active="2"
-		class="el-menu-vertical-demo"
-		:collapse="isCollapse"
-		@open="handleOpen"
-		@close="handleClose"
-    
-    router=true
-		>
-		<el-sub-menu index="1">
-      <template> <span index="6">123</span></template>
-      <template #title>
-			<el-icon><location /></el-icon>
-			<span index="5" >Navigator One</span>
-		  </template>
-		  <el-menu-item-group>
-			<template #title><span>Group One</span></template>
-			<el-menu-item  index="1-1" route="demo">item one</el-menu-item>
-			<el-menu-item index="1-2" route="form">item two</el-menu-item>
-		  </el-menu-item-group>
-		  <el-menu-item-group title="Group Two">
-			<el-menu-item index="1-3">item three</el-menu-item>
-		  </el-menu-item-group>
-		  <el-sub-menu index="1-4">
-			<template #title><span>item four</span></template>
-			<el-menu-item index="1-4-1">item one</el-menu-item>
-		  </el-sub-menu>
-		</el-sub-menu>
-		<el-menu-item index="2">
-		  <el-icon><location /></el-icon>
-		  <template #title>Navigator Two</template>
-		</el-menu-item>
-		<el-menu-item index="3" >
-		  <el-icon><document /></el-icon>
-		  <template #title>Navigator Three</template>
-		</el-menu-item>
-		<el-menu-item index="4">
-		  <el-icon><setting /></el-icon>
-		  <template #title>Navigator Four</template>
-		</el-menu-item>
-		</el-menu>
-    </el-aside>
       <el-container>
         <el-header>
-		  <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-		    <el-icon v-show="!isCollapse" @click="isCollapse=true" style="font-size:30px;"><Fold/></el-icon>
-		    <el-icon v-show="isCollapse" @click="isCollapse=false" style="font-size:30px;"><Expand/></el-icon>
-		  </el-radio-group>
-		  <!-- <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-            <el-radio-button :label="false">expand</el-radio-button>
-            <el-radio-button :label="true">collapse</el-radio-button>
-          </el-radio-group> -->
-		   <!-- <el-switch
-        v-model="isCollapse"
-        :active-value="false"
-        :inactive-value="true"
-		
-      /> -->
           <div id="app">
     <router-view />
   </div>
@@ -89,6 +31,12 @@ const handleClose = (key, keyPath) => {
 </script>
 
 <style>
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-color: #020308;
+  overflow: hidden;
+}
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
   min-height: 400px;

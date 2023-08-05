@@ -23,6 +23,19 @@ export const constantRoutes = [
     // hidden:true
   },
   {
+   path:'/qc',
+   component: () => import('@/views/qc')
+  }
+  ,
+  {
+    path:'/ware',
+    component: () => import('@/views/ware')
+  },
+  {
+    path:'/screen',
+    component: () => import('@/views/screen')
+  },
+  {
     path:'/vm',
     component: () => import('@/views/vm')
   },

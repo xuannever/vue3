@@ -73,11 +73,11 @@ import { encrypt, decrypt } from "@/utils/jsencrypt";
 import useUseStore from '@/store/modules/user'
 
 const userStore = useUseStore()
-const { reactive, getCurrentInstance }=require("vue-demi");
-const { ref } = require("vue-demi")
-const codeUrl = ref("");
+// const { reactive, getCurrentInstance }=require("vue-demi");
+// const { ref } = require("vue-demi")
+// const codeUrl = ref("");
 const captchaOnOff = ref(true)
-const { proxy } =getCurrentInstance();
+// const { proxy } =getCurrentInstance();
 const loading = ref(false);
 const register = ref(false)
 const redirect = ref(undefined)
@@ -97,15 +97,15 @@ const loginRules = {
   code: [{require:true, trigger:"blur", message:"请输入验证码"}]
 }
 
-function getCode() {
-  getCodeImg().then(res => {
-    captchaOnOff.value = res.captchaOnOff === undefined ? true : res.captchaOnOff;
-    if (captchaOnOff.value) {
-      codeUrl.value = "data:image/gif;base64," + res.img;
-      loginForm.value.uuid = res.uuid;
-    }
-  });
-}
+// function getCode() {
+//   getCodeImg().then(res => {
+//     captchaOnOff.value = res.captchaOnOff === undefined ? true : res.captchaOnOff;
+//     if (captchaOnOff.value) {
+//       codeUrl.value = "data:image/gif;base64," + res.img;
+//       loginForm.value.uuid = res.uuid;
+//     }
+//   });
+// }
 
 // function handleLogin() {
 //  login(loginForm.value.username,loginForm.value.password,loginForm.value.code,loginForm.value.uuid).then(res => {
@@ -156,7 +156,7 @@ function getCookie(){
 function remove(){
   Cookies.remove("username")
 }
-getCode();
+// getCode();
 // getCookie();
 </script>
 <style lang='scss' scoped>
@@ -166,7 +166,7 @@ getCode();
   align-items: center;
   width: 100%!important;
   height: 100%!important;
-  background-image: url("../assets/images/login-background.jpg");
+  // background-image: url("../assets/images/login-background.jpg");
   background-size: cover;
   background-attachment: fixed;
   position: absolute;

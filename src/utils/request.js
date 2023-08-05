@@ -16,10 +16,15 @@ axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 const service = axios.create({
   // axios中请求配置有baseURL选项，表示请求URL公共部分
   // baseURL: import.meta.env.VITE_APP_BASE_API,
-  baseURL: 'http://119.29.83.76:8081',
-
+  // baseURL: 'http://119.29.83.76:8081',
+  // baseURL: 'http://192.168.124.40:8080/ht-fuji-trax-services',
+    //  baseURL: 'http://8.129.51.251:8080/ht-fuji-trax-services',
+    //  baseURL: 'http://127.0.0.1:8080/ht-fuji-trax-services',
+  // baseURL: 'http://10.2.157.156:8080/ht-fuji-trax-services',
+  // baseURL: 'http://10.2.186.101:8080/ht-fuji-trax-services',
+  baseURL: 'http://10.2.146.92:8080/ht-fuji-trax-services',
   // 超时
-  timeout: 10000
+  timeout: 1000000
 })
 
 // request拦截器
@@ -102,10 +107,6 @@ service.interceptors.response.use(res => {
       })
       return Promise.reject(new Error(msg))
     } else if (code !== 200) {
-      ElNotification.error({
-        title: msg
-      })
-      return Promise.reject('error')
     } else {
       return  Promise.resolve(res.data)
     }
@@ -130,7 +131,6 @@ service.interceptors.response.use(res => {
     return Promise.reject(error)
   }
 )
-
 // 通用下载方法
 // export function download(url, params, filename) {
 //   downloadLoadingInstance = ElLoading.service({ text: "正在下载数据，请稍候", background: "rgba(0, 0, 0, 0.7)", })
